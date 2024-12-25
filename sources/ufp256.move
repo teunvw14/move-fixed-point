@@ -18,18 +18,23 @@ module move_fixed_point::ufp256 {
         }
     }
 
-    // UFP256 with value 0
+    /// UFP256 with value 0
     public fun zero(): UFP256 {
         UFP256 {
             mantissa: 0
         }
     }
 
-    // UFP256 with value 1
+    /// UFP256 with value 1
     public fun unit(): UFP256 {
         UFP256 {
             mantissa: DECIMAL_FACTOR
         }
+    }
+
+    /// Inner mantissa accessor
+    public fun mantissa(n: UFP256): u256 {
+        n.mantissa
     }
 
     /// Create a UFP256 from a fraction
