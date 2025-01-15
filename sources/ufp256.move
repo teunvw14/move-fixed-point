@@ -26,7 +26,7 @@ module move_fixed_point::ufp256 {
     }
 
     /// UFP256 with value 1
-    public fun unit(): UFP256 {
+    public fun one(): UFP256 {
         UFP256 {
             mantissa: DECIMAL_FACTOR
         }
@@ -118,7 +118,7 @@ module move_fixed_point::ufp256 {
     /// Calculate powers of n: `n.pow(p) = n^p`
     public fun pow(n: &UFP256, p: u64): UFP256 {
         let base = *n;
-        let mut result = new(DECIMAL_FACTOR);
+        let mut result = one();
         p.do!(|_| result = result.mul(base));
         result
     }
@@ -135,7 +135,7 @@ module move_fixed_point::ufp256 {
     /// Calculate negative powers: `n.pow_neg(p) = n^{-p}`
     public fun pow_neg(n: &UFP256, p: u64): UFP256 {
         let base = *n;
-        let mut result = new(DECIMAL_FACTOR);
+        let mut result = one();
         p.do!(|_| result = result.div(base));
         result
     }
