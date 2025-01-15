@@ -2,7 +2,7 @@
 /// and methods for working with these numbers.
 module move_fixed_point::ufp256 {
 
-    const DECIMAL_FACTOR: u256 = 10_000_000_000_000_000_000; // 10^18
+    const DECIMAL_FACTOR: u256 = 18446744073709551616; // 2^64, 64 fractional bits
 
     /// A 256-bit unsigned fixed point number with 18 decimal places for 
     /// high-precision calculations.

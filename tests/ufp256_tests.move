@@ -4,7 +4,7 @@ module move_fixed_point::ufp256_tests {
 
     use iota::test_utils::{assert_eq};
 
-    const DECIMAL_FACTOR: u256 = 10_000_000_000_000_000_000; // 10^18
+    const DECIMAL_FACTOR: u256 = 18446744073709551616; // 2^64, 64 fractional bits
 
     #[test]
     fun test_from_fraction() {
