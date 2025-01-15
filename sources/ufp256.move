@@ -2,7 +2,9 @@
 /// and methods for working with these numbers.
 module move_fixed_point::ufp256 {
 
-    const DECIMAL_FACTOR: u256 = 18446744073709551616; // 2^64, 64 fractional bits
+    // The mantissa value that represents the numeric value 1.
+    // 2^64 for 64 fractional bits
+    const DECIMAL_FACTOR: u256 = 18446744073709551616;
 
     /// A 256-bit unsigned fixed point number with 18 decimal places for 
     /// high-precision calculations.

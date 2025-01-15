@@ -4,7 +4,9 @@ module move_fixed_point::ufp256_tests {
 
     use iota::test_utils::{assert_eq};
 
-    const DECIMAL_FACTOR: u256 = 18446744073709551616; // 2^64, 64 fractional bits
+    // The mantissa value that represents the numeric value 1.
+    // 2^64 for 64 fractional bits
+    const DECIMAL_FACTOR: u256 = 18446744073709551616;
 
     #[test]
     fun test_from_fraction() {
