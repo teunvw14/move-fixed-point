@@ -42,6 +42,7 @@ module move_fixed_point::ufp256 {
         assert!(denominator != 0);
 
         let mantissa = (DECIMAL_FACTOR * numerator) / denominator;
+
         UFP256 {
             mantissa
         }
@@ -102,6 +103,7 @@ module move_fixed_point::ufp256 {
     public fun diff(n: &UFP256, other: UFP256): UFP256 {
         let min = min(*n, other);
         let max = max(*n, other);
+        
         UFP256 {
             mantissa: max.mantissa - min.mantissa
         }
@@ -110,6 +112,7 @@ module move_fixed_point::ufp256 {
     /// Calculate products: `n.mul(other) = n * other`
     public fun mul(n: &UFP256, other: UFP256): UFP256 {
         let mantissa = (n.mantissa * other.mantissa) / DECIMAL_FACTOR;
+        
         UFP256 {
             mantissa
         }
@@ -120,6 +123,7 @@ module move_fixed_point::ufp256 {
         let base = *n;
         let mut result = one();
         p.do!(|_| result = result.mul(base));
+        
         result
     }
 
@@ -137,6 +141,7 @@ module move_fixed_point::ufp256 {
         let base = *n;
         let mut result = one();
         p.do!(|_| result = result.div(base));
+
         result
     }
 }
